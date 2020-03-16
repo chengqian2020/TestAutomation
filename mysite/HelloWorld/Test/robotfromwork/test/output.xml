@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.2 on darwin)" generated="20200315 18:23:37.337" rpa="false">
+<suite id="s1" name="S1" source="/Users/cq/Django/mysite/HelloWorld/Test/robotfromwork/S1.robot">
+<test id="s1-t1" name="Test1">
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>100</arg>
+</arguments>
+<assign>
+<var>${var1}</var>
+</assign>
+<msg timestamp="20200315 18:23:37.524" level="INFO">${var1} = 100</msg>
+<status status="PASS" starttime="20200315 18:23:37.524" endtime="20200315 18:23:37.524"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>50</arg>
+</arguments>
+<assign>
+<var>${var2}</var>
+</assign>
+<msg timestamp="20200315 18:23:37.524" level="INFO">${var2} = 50</msg>
+<status status="PASS" starttime="20200315 18:23:37.524" endtime="20200315 18:23:37.524"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$var1 * int($var2) == 5000</arg>
+</arguments>
+<status status="PASS" starttime="20200315 18:23:37.525" endtime="20200315 18:23:37.528"></status>
+</kw>
+<status status="PASS" starttime="20200315 18:23:37.523" endtime="20200315 18:23:37.528" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Test2">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>http://www.baidu.com</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200315 18:23:37.530" level="INFO">Opening browser 'chrome' to base url 'http://www.baidu.com'.</msg>
+<status status="PASS" starttime="20200315 18:23:37.529" endtime="20200315 18:23:41.369"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" starttime="20200315 18:23:41.369" endtime="20200315 18:23:41.372"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id = kw</arg>
+<arg>北京时间\n</arg>
+</arguments>
+<msg timestamp="20200315 18:23:41.372" level="INFO">Typing text '北京时间
+' into text field 'id = kw'.</msg>
+<status status="PASS" starttime="20200315 18:23:41.372" endtime="20200315 18:23:41.524"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>css=p&gt;span[class=op-beijingtime-date]</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20200315 18:23:41.909" level="INFO">${time} = 2020年3月15日</msg>
+<status status="PASS" starttime="20200315 18:23:41.525" endtime="20200315 18:23:41.909"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<status status="PASS" starttime="20200315 18:23:41.910" endtime="20200315 18:23:41.910"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>$time.startswith('2020')</arg>
+</arguments>
+<status status="PASS" starttime="20200315 18:23:41.910" endtime="20200315 18:23:41.911"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200315 18:23:41.911" endtime="20200315 18:23:41.996"></status>
+</kw>
+<doc>登录百度搜索"北京时间"</doc>
+<status status="PASS" starttime="20200315 18:23:37.529" endtime="20200315 18:23:41.996" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Test3">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://www.champzee.com/m/login</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200315 18:23:42.000" level="INFO">Opening browser 'chrome' to base url 'https://www.champzee.com/m/login'.</msg>
+<status status="PASS" starttime="20200315 18:23:41.999" endtime="20200315 18:23:44.829"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" starttime="20200315 18:23:44.829" endtime="20200315 18:23:44.831"></status>
+</kw>
+<doc>登录垂衣</doc>
+<status status="PASS" starttime="20200315 18:23:41.998" endtime="20200315 18:23:44.831" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200315 18:23:37.338" endtime="20200315 18:23:44.832"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="S1">S1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
